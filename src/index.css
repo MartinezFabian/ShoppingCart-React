@@ -1,0 +1,26 @@
+:root {
+  --main-font: 'Poppins', sans-serif;
+
+  --black: #202020;
+  --white: #fff;
+  --red: #bf0808;
+  --background-color: #f5f5f5;
+  --primary-color: #003c8c;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
