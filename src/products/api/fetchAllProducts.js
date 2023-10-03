@@ -1,6 +1,6 @@
 export async function fetchAllProducts() {
   try {
-    const response = await fetch('https://dummyjson.com/products');
+    const response = await fetch('https://dummyjson.com/products?limit=30');
 
     if (response.ok) {
       const data = await response.json();

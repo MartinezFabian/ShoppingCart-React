@@ -4,7 +4,7 @@ import { ClearCartIcon } from '../../products/components/icons/ClearCartIcon';
 import styles from './Navbar.module.css';
 
 export const Navbar = () => {
-  const [displayCart, setDisplayCart] = useState(true);
+  const [displayCart, setDisplayCart] = useState(false);
 
   return (
     <div className={styles.nav}>
