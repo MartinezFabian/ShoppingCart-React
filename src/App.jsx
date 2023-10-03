@@ -1,7 +1,9 @@
+import { Navbar } from './ui/components/Navbar';
+
 export const App = () => {
   return (
     <>
-      <h1>ShoppingCart-React</h1>
+      <Navbar></Navbar>
     </>
   );
 };

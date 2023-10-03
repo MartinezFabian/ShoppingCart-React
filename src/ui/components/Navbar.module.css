@@ -1,0 +1,71 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.nav__container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__heading {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon svg:hover {
+  cursor: pointer;
+}
+
+.cart {
+  background-color: var(--white);
+  width: 29rem;
+  position: absolute;
+  right: 3rem;
+  top: 6rem;
+  z-index: 1;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cart {
+    width: 40rem;
+  }
+}
+
+.cart__btn {
+  background-color: var(--red);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart__btn:hover {
+  cursor: pointer;
+}
