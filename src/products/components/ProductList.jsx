@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { ProductItem } from './ProductItem';
+import styles from './ProductList.module.css';
 
 export const ProductList = ({ products }) => {
   return (
-    <main>
-      <ul>
+    <main className={styles.main}>
+      <ul className={styles.main__grid}>
         {products.map((product) => {
           return (
             <ProductItem

@@ -1,0 +1,20 @@
+.main {
+  max-width: 120rem;
+  width: 90%;
+  margin: 16rem auto;
+}
+
+.main__grid {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (min-width: 468px) {
+  .main__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 27rem);
+    justify-content: center;
+    gap: 1rem;
+  }
+}
