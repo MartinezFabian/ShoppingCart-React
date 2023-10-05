@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FilterProducts.module.css';
 
 export const FilterProducts = ({ setFilters }) => {
+  const minPriceFilterId = useId();
+  const categoryFilterId = useId();
+
   const [minPrice, setMinPrice] = useState(0);
 
   const onChangeRange = (e) => {
@@ -16,7 +19,6 @@ export const FilterProducts = ({ setFilters }) => {
   };
 
   const onChangeCategory = (e) => {
-    console.log(e.target.value);
     setFilters((prevState) => {
       return { ...prevState, category: e.target.value };
     });
@@ -25,11 +27,11 @@ export const FilterProducts = ({ setFilters }) => {
   return (
     <section className={styles.container}>
       <div className={styles.container__filter}>
-        <label htmlFor="price">Minimum Price</label>
+        <label htmlFor={minPriceFilterId}>Minimum Price</label>
         <input
           onChange={onChangeRange}
           type="range"
-          id="price"
+          id={minPriceFilterId}
           min="0"
           max="1500"
           className={styles.range}
@@ -38,8 +40,8 @@ export const FilterProducts = ({ setFilters }) => {
       </div>
 
       <div className={styles.container__filter}>
-        <label htmlFor="category">Category</label>
-        <select onChange={onChangeCategory} id="category" className={styles.select}>
+        <label htmlFor={categoryFilterId}>Category</label>
+        <select onChange={onChangeCategory} id={categoryFilterId} className={styles.select}>
           <option value="all">All</option>
           <option value="smartphones">Smartphones</option>
           <option value="laptops">Laptops</option>
