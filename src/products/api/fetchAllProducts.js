@@ -11,6 +11,7 @@ export async function fetchAllProducts() {
           title: product.title,
           price: product.price,
           img: product.thumbnail,
+          category: product.category,
         };
       });
 
