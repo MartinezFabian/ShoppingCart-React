@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './FilterProducts.module.css';
 
 export const FilterProducts = ({ setFilters }) => {
   const [minPrice, setMinPrice] = useState(0);
@@ -22,16 +23,23 @@ export const FilterProducts = ({ setFilters }) => {
   };
 
   return (
-    <section>
-      <div>
+    <section className={styles.container}>
+      <div className={styles.container__filter}>
         <label htmlFor="price">Minimum Price</label>
-        <input onChange={onChangeRange} type="range" id="price" min="0" max="1500" />
+        <input
+          onChange={onChangeRange}
+          type="range"
+          id="price"
+          min="0"
+          max="1500"
+          className={styles.range}
+        />
         <span>US${minPrice}</span>
       </div>
 
-      <div>
+      <div className={styles.container__filter}>
         <label htmlFor="category">Category</label>
-        <select onChange={onChangeCategory} id="category">
+        <select onChange={onChangeCategory} id="category" className={styles.select}>
           <option value="all">All</option>
           <option value="smartphones">Smartphones</option>
           <option value="laptops">Laptops</option>

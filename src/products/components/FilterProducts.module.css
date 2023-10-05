@@ -1,0 +1,33 @@
+.container {
+  max-width: 120rem;
+  width: 90%;
+  margin: 16rem auto 8rem auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 468px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.container__filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.range {
+  width: 20rem;
+}
+
+.select {
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  border-color: var(--gray);
+}
