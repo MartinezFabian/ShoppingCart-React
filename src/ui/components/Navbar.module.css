@@ -36,37 +36,3 @@
 .icon svg:hover {
   cursor: pointer;
 }
-
-.cart {
-  background-color: var(--white);
-  width: 80%;
-  position: absolute;
-  right: 3rem;
-  top: 6rem;
-  z-index: 1;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
-@media (min-width: 468px) {
-  .cart {
-    width: 40rem;
-  }
-}
-
-.cart__btn {
-  background-color: var(--red);
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart__btn:hover {
-  cursor: pointer;
-}

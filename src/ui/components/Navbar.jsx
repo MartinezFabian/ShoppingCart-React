@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { CartIcon } from '../../products/components/icons/CartIcon';
-import { ClearCartIcon } from '../../products/components/icons/ClearCartIcon';
 import styles from './Navbar.module.css';
+import { Cart } from '../../products/components/Cart';
 
 export const Navbar = () => {
   const [displayCart, setDisplayCart] = useState(false);
@@ -16,15 +17,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {displayCart ? (
-        <aside className={styles.cart}>
-          <ul></ul>
-
-          <button className={styles.cart__btn}>
-            <ClearCartIcon />
-          </button>
-        </aside>
-      ) : null}
+      {displayCart ? <Cart></Cart> : null}
     </div>
   );
 };
