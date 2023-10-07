@@ -1,17 +1,16 @@
-import { useId, useState } from 'react';
-import PropTypes from 'prop-types';
-import styles from './FilterProducts.module.css';
+import { useId } from 'react';
 
-export const FilterProducts = ({ setFilters }) => {
+import styles from './FilterProducts.module.css';
+import { useFilters } from '../hook/useFilters';
+
+export const FilterProducts = () => {
+  const { filters, setFilters } = useFilters();
+
   const minPriceFilterId = useId();
   const categoryFilterId = useId();
 
-  const [minPrice, setMinPrice] = useState(0);
-
   const onChangeRange = (e) => {
     const minPrice = e.target.value;
-
-    setMinPrice(minPrice);
 
     setFilters((prevState) => {
       return { ...prevState, minPrice: minPrice };
@@ -34,9 +33,10 @@ export const FilterProducts = ({ setFilters }) => {
           id={minPriceFilterId}
           min="0"
           max="1500"
+          value={filters.minPrice}
           className={styles.range}
         />
-        <span>US${minPrice}</span>
+        <span>US${filters.minPrice}</span>
       </div>
 
       <div className={styles.container__filter}>
@@ -53,8 +53,4 @@ export const FilterProducts = ({ setFilters }) => {
       </div>
     </section>
   );
-};
-
-FilterProducts.propTypes = {
-  setFilters: PropTypes.func.isRequired,
 };

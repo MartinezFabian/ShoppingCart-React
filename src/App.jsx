@@ -7,7 +7,7 @@ import { useFilters } from './products/hook/useFilters';
 
 export const App = () => {
   const [products, setProducts] = useState([]);
-  const { filterProducts, setFilters } = useFilters();
+  const { filterProducts } = useFilters();
 
   useEffect(() => {
     getAllProducts();
@@ -25,7 +25,7 @@ export const App = () => {
     <>
       <header>
         <Navbar></Navbar>
-        <FilterProducts setFilters={setFilters}></FilterProducts>
+        <FilterProducts></FilterProducts>
       </header>
 
       <ProductList products={filteredProducts}></ProductList>
