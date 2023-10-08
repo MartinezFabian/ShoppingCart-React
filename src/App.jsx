@@ -4,6 +4,7 @@ import { ProductList } from './products/components/ProductList';
 import { Navbar } from './ui/components/Navbar';
 import { FilterProducts } from './products/components/FilterProducts';
 import { useFilters } from './products/hook/useFilters';
+import { CartProvider } from './products/context/CartContext';
 
 export const App = () => {
   const [products, setProducts] = useState([]);
@@ -22,13 +23,13 @@ export const App = () => {
   const filteredProducts = filterProducts(products);
 
   return (
-    <>
+    <CartProvider>
       <header>
         <Navbar></Navbar>
         <FilterProducts></FilterProducts>
       </header>
 
       <ProductList products={filteredProducts}></ProductList>
-    </>
+    </CartProvider>
   );
 };
