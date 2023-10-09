@@ -17,7 +17,7 @@
 
 @media (min-width: 468px) {
   .cart {
-    width: 40rem;
+    width: 30rem;
   }
 }
 
@@ -41,4 +41,19 @@
 
 .cart__btn:hover {
   cursor: pointer;
+}
+
+.cart__subtotal {
+  border-top: solid 1px var(--gray);
+  border-bottom: solid 1px var(--gray);
+
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.cart__message {
+  font-size: 1.3rem;
+  padding: 2rem 0.5rem;
 }

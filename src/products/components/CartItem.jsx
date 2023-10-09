@@ -10,7 +10,7 @@ export const CartItem = ({ product }) => {
 
       <div className={styles.item__container}>
         <p className={styles.item__title}>{product.title}</p>
-        <h3 className={styles.item__price}>{product.price}</h3>
+        <h3 className={styles.item__price}>US${product.price}</h3>
 
         <div className={styles.quantity}>
           <p className={styles.quantity__text}>quantity: {product.quantity}</p>
