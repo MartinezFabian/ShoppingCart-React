@@ -10,6 +10,9 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+
+  overflow-y: scroll;
+  max-height: 80vh;
 }
 
 @media (min-width: 468px) {
@@ -18,10 +21,18 @@
   }
 }
 
+.cart__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .cart__btn {
+  margin-top: 2rem;
   background-color: var(--red);
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+  width: 60%;
   border-radius: 1rem;
   display: flex;
   justify-content: center;

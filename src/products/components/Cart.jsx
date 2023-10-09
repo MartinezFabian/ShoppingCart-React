@@ -8,7 +8,7 @@ export const Cart = () => {
 
   return (
     <aside className={styles.cart}>
-      <ul>
+      <ul className={styles.cart__list}>
         {cartContents.map((product) => {
           return <CartItem key={product.id} product={product}></CartItem>;
         })}

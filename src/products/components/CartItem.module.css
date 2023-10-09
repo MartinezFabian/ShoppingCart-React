@@ -1,0 +1,56 @@
+.item {
+  list-style: none;
+  padding: 2rem;
+  border-bottom: solid 1px var(--gray);
+}
+
+.item__img {
+}
+
+.img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+
+.item__container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.item__title {
+  margin: 0;
+}
+
+.item__price {
+  margin: 0;
+}
+
+.quantity {
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.quantity__text {
+  margin: 0;
+}
+
+.quantity__btn {
+  background-color: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white);
+}
+
+.quantity__btn:hover {
+  cursor: pointer;
+}
