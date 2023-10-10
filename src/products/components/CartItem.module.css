@@ -32,10 +32,12 @@
 }
 
 .quantity {
+  width: 100%;
   margin: 0;
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
 }
 
 .quantity__text {

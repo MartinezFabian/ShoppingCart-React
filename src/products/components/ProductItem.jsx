@@ -7,8 +7,6 @@ import { RemoveFromCartIcon } from './icons/RemoveFromCartIcon';
 export const ProductItem = ({ id, title, price, img }) => {
   const { cartContents, addToCart, removeFromCart } = useCart();
 
-  console.log(cartContents);
-
   const isProductInCart = cartContents.some((product) => product.id === id);
 
   return (

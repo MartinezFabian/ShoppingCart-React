@@ -3,10 +3,14 @@ import styles from './CartItem.module.css';
 import { useCart } from '../hook/useCart';
 
 export const CartItem = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, decreaseQuantity } = useCart();
 
   const onAddToCart = () => {
     if (product.quantity < 5) addToCart(product);
+  };
+
+  const onDecreaseQuantity = () => {
+    decreaseQuantity(product);
   };
 
   return (
@@ -21,6 +25,9 @@ export const CartItem = ({ product }) => {
 
         <div className={styles.quantity}>
           <p className={styles.quantity__text}>quantity: {product.quantity}</p>
+          <button onClick={onDecreaseQuantity} className={styles.quantity__btn}>
+            -
+          </button>
           <button onClick={onAddToCart} className={styles.quantity__btn}>
             +
           </button>

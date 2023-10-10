@@ -1,7 +1,7 @@
 .main {
   max-width: 120rem;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 10rem auto;
 }
 
 .main__grid {
