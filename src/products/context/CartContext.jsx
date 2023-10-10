@@ -1,61 +1,43 @@
-import { createContext, useState } from 'react';
+import { createContext, useReducer } from 'react';
+import { cartReducer } from './cartReducer';
 
 export const CartContext = createContext();
 
+const initialState = [];
+
 export const CartProvider = ({ children }) => {
-  const [cartContents, setCartContents] = useState([]);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addToCart = (newProduct) => {
-    const productExist = cartContents.some((product) => product.id === newProduct.id);
-
-    if (productExist) {
-      const newState = cartContents.map((product) => {
-        if (product.id === newProduct.id) {
-          return {
-            ...product,
-            quantity: product.quantity + 1,
-          };
-        }
-
-        return product;
-      });
-
-      setCartContents(newState);
-    } else {
-      setCartContents((prevState) => [...prevState, { ...newProduct, quantity: 1 }]);
-    }
+    return dispatch({
+      type: 'ADD_TO_CART',
+      payload: newProduct,
+    });
   };
 
   const decreaseQuantity = (product) => {
-    if (product.quantity > 1) {
-      const newState = cartContents.map((item) => {
-        if (item.id === product.id) {
-          return {
-            ...item,
-            quantity: item.quantity - 1,
-          };
-        }
-
-        return item;
-      });
-
-      setCartContents(newState);
-    } else {
-      setCartContents((prevState) => prevState.filter((item) => item.id !== product.id));
-    }
+    return dispatch({
+      type: 'DECREASE_QUANTITY',
+      payload: product,
+    });
   };
 
   const removeFromCart = (idToRemoved) => {
-    setCartContents((prevState) => prevState.filter((product) => product.id !== idToRemoved));
+    return dispatch({
+      type: 'REMOVE_FROM_CART',
+      payload: idToRemoved,
+    });
   };
 
   const clearCart = () => {
-    setCartContents([]);
+    return dispatch({
+      type: 'CLEAR_CART',
+    });
   };
 
   return (
     <CartContext.Provider
-      value={{ cartContents, addToCart, removeFromCart, decreaseQuantity, clearCart }}
+      value={{ cartContents: state, addToCart, removeFromCart, decreaseQuantity, clearCart }}
     >
       {children}
     </CartContext.Provider>
