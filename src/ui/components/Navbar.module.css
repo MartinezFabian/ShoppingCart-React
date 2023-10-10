@@ -25,6 +25,7 @@
 .icon {
   width: 4rem;
   height: 4rem;
+  position: relative;
 }
 
 .icon svg {
@@ -35,4 +36,19 @@
 
 .icon svg:hover {
   cursor: pointer;
+}
+
+.counter {
+  position: absolute;
+  top: 49%;
+  right: -5px;
+  background-color: var(--red);
+  color: var(--white);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 700;
 }

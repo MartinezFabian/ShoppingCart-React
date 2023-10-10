@@ -4,7 +4,7 @@ import styles from './Cart.module.css';
 import { CartItem } from './CartItem';
 
 export const Cart = () => {
-  const { cartContents } = useCart();
+  const { cartContents, clearCart } = useCart();
 
   const subtotal = cartContents.reduce(
     (accum, product) => accum + product.price * product.quantity,
@@ -29,7 +29,7 @@ export const Cart = () => {
       )}
 
       {cartContents.length > 0 ? (
-        <button className={styles.cart__btn}>
+        <button onClick={clearCart} className={styles.cart__btn}>
           <ClearCartIcon />
         </button>
       ) : null}

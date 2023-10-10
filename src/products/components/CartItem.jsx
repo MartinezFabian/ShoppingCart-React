@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import styles from './CartItem.module.css';
+import { useCart } from '../hook/useCart';
 
 export const CartItem = ({ product }) => {
+  const { addToCart } = useCart();
+
+  const onAddToCart = () => {
+    if (product.quantity < 5) addToCart(product);
+  };
+
   return (
     <li className={styles.item}>
       <div className={styles.item__img}>
@@ -14,7 +21,9 @@ export const CartItem = ({ product }) => {
 
         <div className={styles.quantity}>
           <p className={styles.quantity__text}>quantity: {product.quantity}</p>
-          <button className={styles.quantity__btn}>+</button>
+          <button onClick={onAddToCart} className={styles.quantity__btn}>
+            +
+          </button>
         </div>
       </div>
     </li>
