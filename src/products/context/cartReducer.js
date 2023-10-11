@@ -5,6 +5,10 @@ export const CART_ACTION_TYPES = {
   CLEAR_CART: 'CLEAR_CART',
 };
 
+const updateLocalStorage = (newState) => {
+  localStorage.setItem('cart', JSON.stringify(newState));
+};
+
 export const cartReducer = (state = [], action = {}) => {
   switch (action.type) {
     case CART_ACTION_TYPES.ADD_TO_CART: {
@@ -22,9 +26,15 @@ export const cartReducer = (state = [], action = {}) => {
           return product;
         });
 
+        updateLocalStorage(newState);
+
         return newState;
       } else {
-        return [...state, { ...action.payload, quantity: 1 }];
+        const newState = [...state, { ...action.payload, quantity: 1 }];
+
+        updateLocalStorage(newState);
+
+        return newState;
       }
     }
 
@@ -40,19 +50,32 @@ export const cartReducer = (state = [], action = {}) => {
 
           return item;
         });
+        updateLocalStorage(newState);
 
         return newState;
       } else {
-        return state.filter((item) => item.id !== action.payload.id);
+        const newState = state.filter((item) => item.id !== action.payload.id);
+
+        updateLocalStorage(newState);
+
+        return newState;
       }
     }
 
     case CART_ACTION_TYPES.REMOVE_FROM_CART: {
-      return state.filter((product) => product.id !== action.payload);
+      const newState = state.filter((product) => product.id !== action.payload);
+
+      updateLocalStorage(newState);
+
+      return newState;
     }
 
     case CART_ACTION_TYPES.CLEAR_CART: {
-      return [];
+      const newState = [];
+
+      updateLocalStorage(newState);
+
+      return newState;
     }
 
     default: {
