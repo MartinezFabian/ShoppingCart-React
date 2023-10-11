@@ -30,4 +30,4 @@ The primary goal of the **ShoppingCart-React** project is to apply and showcase 
 
 ## Online Demo
 
-To experience the **ShoppingCart-React** project in action, please visit the online demo at [Demo Link](#)
+To experience the **ShoppingCart-React** project in action, please visit the online demo at [Demo Link](https://martinezfabian.github.io/ShoppingCart-React/)
